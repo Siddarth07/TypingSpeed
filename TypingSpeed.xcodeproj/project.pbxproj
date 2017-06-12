@@ -15,6 +15,8 @@
 		BE531E0B1EEED1800043D3DE /* TypingSpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E0A1EEED1800043D3DE /* TypingSpeedTests.swift */; };
 		BE531E161EEED1800043D3DE /* TypingSpeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */; };
 		BE531E241EEED6190043D3DE /* TimerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E231EEED6190043D3DE /* TimerImplementation.swift */; };
+		BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E251EEEE83D0043D3DE /* TypingPassages.swift */; };
+		BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E271EEEF4040043D3DE /* accuracyDetection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingSpeedUITests.swift; sourceTree = "<group>"; };
 		BE531E171EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE531E231EEED6190043D3DE /* TimerImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerImplementation.swift; sourceTree = "<group>"; };
+		BE531E251EEEE83D0043D3DE /* TypingPassages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingPassages.swift; sourceTree = "<group>"; };
+		BE531E271EEEF4040043D3DE /* accuracyDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accuracyDetection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				BE531DF51EEED1800043D3DE /* AppDelegate.swift */,
 				BE531DF71EEED1800043D3DE /* ViewController.swift */,
+				BE531E271EEEF4040043D3DE /* accuracyDetection.swift */,
+				BE531E251EEEE83D0043D3DE /* TypingPassages.swift */,
 				BE531DF91EEED1800043D3DE /* Main.storyboard */,
 				BE531E231EEED6190043D3DE /* TimerImplementation.swift */,
 				BE531DFC1EEED1800043D3DE /* Assets.xcassets */,
@@ -263,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */,
+				BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */,
 				BE531E241EEED6190043D3DE /* TimerImplementation.swift in Sources */,
 				BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */,
+				BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

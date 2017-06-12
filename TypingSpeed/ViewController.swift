@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        populateTextPassage()
         
     }
     
@@ -24,21 +24,18 @@ class ViewController: UIViewController {
     }
     
   
-    //Function Call to Timer
-    var numButtonPress=0;
+    //MARK: Function Call to Timer
     @IBOutlet weak var countdownText: UILabel!
-    var numSeconds = 60;
+    var numSeconds = 60
     var timer = Timer()
     @IBOutlet weak var userTextField: UITextField!
-
-
     
+    var userBeganTyping = false
     @IBAction func pressInUserTextField(_ sender: Any) {
-        if(numButtonPress==0){
-            numButtonPress += 1
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.implementCounter), userInfo: nil, repeats: true)
+        if(!(userBeganTyping)){
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(implementCounter), userInfo: nil, repeats: true)
+            userBeganTyping = true
         }
-        
     }
     
   
@@ -55,8 +52,29 @@ class ViewController: UIViewController {
         numSeconds = 60
         countdownText.text = "60"
         timer.invalidate()
-        
+        populateTextPassage()
+        userTextField.text = ""
     }
+    
+    
+    
+    //MARK: Creating Passage
+    var attributesSet = true
+    @IBOutlet weak var passageText: UITextView!
+    func populateTextPassage() {
+        if(attributesSet){
+            passageText.isEditable = false
+    
+            attributesSet = false
+        }
+        let typingPassages = TypingPassages()
+        passageText.text = typingPassages.retreivePassage(choiceNumber: Int(arc4random_uniform(2)))
+ 
+    }
+    
+    
+    
+    
 
 }
 
