@@ -30,7 +30,8 @@
                                 <connections>
                                     <action selector="pressInUserTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="EUw-Ko-ycp"/>
                                     <action selector="pressInUserTextField:" destination="BYZ-38-t0r" eventType="touchDown" id="Fgf-gS-2Sf"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4B4-da-2Q3"/>
+                                    <action selector="textFieldValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ujk-I4-GqH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MYx-kb-KlA"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzF-5Z-ELk">
