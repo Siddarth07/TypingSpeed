@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF51EEED1800043D3DE /* AppDelegate.swift */; };
+		BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF71EEED1800043D3DE /* ViewController.swift */; };
+		BE531DFB1EEED1800043D3DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE531DF91EEED1800043D3DE /* Main.storyboard */; };
+		BE531DFD1EEED1800043D3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE531DFC1EEED1800043D3DE /* Assets.xcassets */; };
+		BE531E001EEED1800043D3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE531DFE1EEED1800043D3DE /* LaunchScreen.storyboard */; };
+		BE531E0B1EEED1800043D3DE /* TypingSpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E0A1EEED1800043D3DE /* TypingSpeedTests.swift */; };
+		BE531E161EEED1800043D3DE /* TypingSpeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE531E071EEED1800043D3DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE531DEA1EEED1800043D3DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE531DF11EEED1800043D3DE;
+			remoteInfo = TypingSpeed;
+		};
+		BE531E121EEED1800043D3DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE531DEA1EEED1800043D3DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE531DF11EEED1800043D3DE;
+			remoteInfo = TypingSpeed;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE531DF21EEED1800043D3DE /* TypingSpeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingSpeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE531DF51EEED1800043D3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE531DF71EEED1800043D3DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE531DFA1EEED1800043D3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE531DFC1EEED1800043D3DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE531DFF1EEED1800043D3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE531E011EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE531E061EEED1800043D3DE /* TypingSpeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingSpeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE531E0A1EEED1800043D3DE /* TypingSpeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingSpeedTests.swift; sourceTree = "<group>"; };
+		BE531E0C1EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE531E111EEED1800043D3DE /* TypingSpeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingSpeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingSpeedUITests.swift; sourceTree = "<group>"; };
+		BE531E171EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE531DEF1EEED1800043D3DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E031EEED1800043D3DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E0E1EEED1800043D3DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE531DE91EEED1800043D3DE = {
+			isa = PBXGroup;
+			children = (
+				BE531DF41EEED1800043D3DE /* TypingSpeed */,
+				BE531E091EEED1800043D3DE /* TypingSpeedTests */,
+				BE531E141EEED1800043D3DE /* TypingSpeedUITests */,
+				BE531DF31EEED1800043D3DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE531DF31EEED1800043D3DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE531DF21EEED1800043D3DE /* TypingSpeed.app */,
+				BE531E061EEED1800043D3DE /* TypingSpeedTests.xctest */,
+				BE531E111EEED1800043D3DE /* TypingSpeedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE531DF41EEED1800043D3DE /* TypingSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				BE531DF51EEED1800043D3DE /* AppDelegate.swift */,
+				BE531DF71EEED1800043D3DE /* ViewController.swift */,
+				BE531DF91EEED1800043D3DE /* Main.storyboard */,
+				BE531DFC1EEED1800043D3DE /* Assets.xcassets */,
+				BE531DFE1EEED1800043D3DE /* LaunchScreen.storyboard */,
+				BE531E011EEED1800043D3DE /* Info.plist */,
+			);
+			path = TypingSpeed;
+			sourceTree = "<group>";
+		};
+		BE531E091EEED1800043D3DE /* TypingSpeedTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE531E0A1EEED1800043D3DE /* TypingSpeedTests.swift */,
+				BE531E0C1EEED1800043D3DE /* Info.plist */,
+			);
+			path = TypingSpeedTests;
+			sourceTree = "<group>";
+		};
+		BE531E141EEED1800043D3DE /* TypingSpeedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */,
+				BE531E171EEED1800043D3DE /* Info.plist */,
+			);
+			path = TypingSpeedUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE531DF11EEED1800043D3DE /* TypingSpeed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE531E1A1EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeed" */;
+			buildPhases = (
+				BE531DEE1EEED1800043D3DE /* Sources */,
+				BE531DEF1EEED1800043D3DE /* Frameworks */,
+				BE531DF01EEED1800043D3DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TypingSpeed;
+			productName = TypingSpeed;
+			productReference = BE531DF21EEED1800043D3DE /* TypingSpeed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE531E051EEED1800043D3DE /* TypingSpeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE531E1D1EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeedTests" */;
+			buildPhases = (
+				BE531E021EEED1800043D3DE /* Sources */,
+				BE531E031EEED1800043D3DE /* Frameworks */,
+				BE531E041EEED1800043D3DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE531E081EEED1800043D3DE /* PBXTargetDependency */,
+			);
+			name = TypingSpeedTests;
+			productName = TypingSpeedTests;
+			productReference = BE531E061EEED1800043D3DE /* TypingSpeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE531E101EEED1800043D3DE /* TypingSpeedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE531E201EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeedUITests" */;
+			buildPhases = (
+				BE531E0D1EEED1800043D3DE /* Sources */,
+				BE531E0E1EEED1800043D3DE /* Frameworks */,
+				BE531E0F1EEED1800043D3DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE531E131EEED1800043D3DE /* PBXTargetDependency */,
+			);
+			name = TypingSpeedUITests;
+			productName = TypingSpeedUITests;
+			productReference = BE531E111EEED1800043D3DE /* TypingSpeedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE531DEA1EEED1800043D3DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Siddarth Kethireddy";
+				TargetAttributes = {
+					BE531DF11EEED1800043D3DE = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					BE531E051EEED1800043D3DE = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE531DF11EEED1800043D3DE;
+					};
+					BE531E101EEED1800043D3DE = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE531DF11EEED1800043D3DE;
+					};
+				};
+			};
+			buildConfigurationList = BE531DED1EEED1800043D3DE /* Build configuration list for PBXProject "TypingSpeed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE531DE91EEED1800043D3DE;
+			productRefGroup = BE531DF31EEED1800043D3DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE531DF11EEED1800043D3DE /* TypingSpeed */,
+				BE531E051EEED1800043D3DE /* TypingSpeedTests */,
+				BE531E101EEED1800043D3DE /* TypingSpeedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE531DF01EEED1800043D3DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE531E001EEED1800043D3DE /* LaunchScreen.storyboard in Resources */,
+				BE531DFD1EEED1800043D3DE /* Assets.xcassets in Resources */,
+				BE531DFB1EEED1800043D3DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E041EEED1800043D3DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E0F1EEED1800043D3DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE531DEE1EEED1800043D3DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */,
+				BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E021EEED1800043D3DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE531E0B1EEED1800043D3DE /* TypingSpeedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE531E0D1EEED1800043D3DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE531E161EEED1800043D3DE /* TypingSpeedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE531E081EEED1800043D3DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE531DF11EEED1800043D3DE /* TypingSpeed */;
+			targetProxy = BE531E071EEED1800043D3DE /* PBXContainerItemProxy */;
+		};
+		BE531E131EEED1800043D3DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE531DF11EEED1800043D3DE /* TypingSpeed */;
+			targetProxy = BE531E121EEED1800043D3DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE531DF91EEED1800043D3DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE531DFA1EEED1800043D3DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE531DFE1EEED1800043D3DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE531DFF1EEED1800043D3DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE531E181EEED1800043D3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE531E191EEED1800043D3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE531E1B1EEED1800043D3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TypingSpeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BE531E1C1EEED1800043D3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TypingSpeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BE531E1E1EEED1800043D3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TypingSpeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TypingSpeed.app/TypingSpeed";
+			};
+			name = Debug;
+		};
+		BE531E1F1EEED1800043D3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TypingSpeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TypingSpeed.app/TypingSpeed";
+			};
+			name = Release;
+		};
+		BE531E211EEED1800043D3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TypingSpeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TypingSpeed;
+			};
+			name = Debug;
+		};
+		BE531E221EEED1800043D3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = TypingSpeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TypingSpeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TypingSpeed;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE531DED1EEED1800043D3DE /* Build configuration list for PBXProject "TypingSpeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE531E181EEED1800043D3DE /* Debug */,
+				BE531E191EEED1800043D3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE531E1A1EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE531E1B1EEED1800043D3DE /* Debug */,
+				BE531E1C1EEED1800043D3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE531E1D1EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE531E1E1EEED1800043D3DE /* Debug */,
+				BE531E1F1EEED1800043D3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE531E201EEED1800043D3DE /* Build configuration list for PBXNativeTarget "TypingSpeedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE531E211EEED1800043D3DE /* Debug */,
+				BE531E221EEED1800043D3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE531DEA1EEED1800043D3DE /* Project object */;
+}
