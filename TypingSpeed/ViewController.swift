@@ -76,30 +76,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func populateTextPassage() {
         if(attributesNotSet){
             passageText.isEditable = false
-    
             attributesNotSet = false
         }
         passageUse = typingPassages.retreivePassage(choiceNumber: passageNumber)
         passageText.text = passageUse
-        print(passageText.text)
- 
     }
     
     
     
 //MARK:AccuracyDetection
     var indexPosition = 0;
+    var numCorrect = 0;
+    var numWrong = 0;
     func textFieldValueChanged(_ textField: UITextField) {
         let accuracyDetector = AccuracyDetection()
-        if(userTextField.text?.characters.last! == " "){
+        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0){
             let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
             if(correct){
-                print("good job!")
+                indexPosition += 1
+                numCorrect+=1
+                resetUserTextfield()
             }
             else{
-                print("wrong!")
+                indexPosition += 1
+                numWrong += 1
+                resetUserTextfield()
             }
         }
+        if(numSeconds == 0){
+            print(numCorrect)
+            print(numWrong)
+        }
+        
         
     }
     
@@ -109,11 +117,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         countdownText.text = "60"
         timer.invalidate()
         populateTextPassage()
-        userTextField.text = ""
+        resetUserTextfield()
         dismissKeyboard()
         userBeganTyping = false
         passageNumber = Int(arc4random_uniform(2))
         indexPosition = 0;
+    }
+    func resetUserTextfield(){
+        userTextField.text = ""
     }
 
 }
