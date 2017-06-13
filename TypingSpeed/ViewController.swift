@@ -18,14 +18,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userTextField.delegate = self
         let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(outsideViewClick)
+      
+        
 
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func checkToChangeScreen(){
+            self.performSegue(withIdentifier: "WPMScreenSegue", sender: self)
+            
     }
+    
+    
     
     
     //MARK: Exitting First Responder Status and Hiding Keyboard
@@ -46,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
   
     //MARK: Function Call to Timer
     @IBOutlet weak var countdownText: UILabel!
-    var numSeconds = 60
+    var numSeconds = 15
     var timer = Timer()
     @IBOutlet weak var userTextField: UITextField!
     
@@ -64,6 +67,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
             timer.invalidate()
+            checkToChangeScreen()
         }
     }
     
@@ -88,8 +92,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var indexPosition = 0;
     var numCorrect = 0;
     var numWrong = 0;
+    let accuracyDetector = AccuracyDetection()
     func textFieldValueChanged(_ textField: UITextField) {
-        let accuracyDetector = AccuracyDetection()
+        accuracyDetector.trackNumChars()
+     
         if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0){
             let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
             if(correct){
@@ -103,14 +109,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 resetUserTextfield()
             }
         }
-        if(numSeconds == 0){
-            print(numCorrect)
-            print(numWrong)
-        }
-        
+    }
+    func scrollToCurrentWord(){
         
     }
-    
+    func getCurrentIndexInTextView(){
+       // var index = 0
+        
+    }
     
     @IBAction func resetButton(_ sender: Any) {
         numSeconds = 60
@@ -121,11 +127,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dismissKeyboard()
         userBeganTyping = false
         passageNumber = Int(arc4random_uniform(2))
-        indexPosition = 0;
+        indexPosition = 0
+        accuracyDetector.resetNumChars()
     }
+    
     func resetUserTextfield(){
         userTextField.text = ""
     }
+    
+    //MARK: Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WPMScreenSegue" {
+            let WPMInfo = segue.destination as! WPMScreen
+            WPMInfo.numCorrectDisplay = numCorrect
+            WPMInfo.numWrongDisplay = numWrong
+            
+        }
 
+
+}
 }
 

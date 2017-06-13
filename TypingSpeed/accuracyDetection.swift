@@ -30,4 +30,15 @@ class AccuracyDetection{
         
         return wordBool
     }
+    
+    
+    var numChar = 0
+    
+    func trackNumChars() {
+        numChar += 1
+    }
+    
+    func resetNumChars(){
+        numChar = 0
+    }
 }
