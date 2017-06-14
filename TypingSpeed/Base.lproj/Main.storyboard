@@ -63,8 +63,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-X7-ZgI">
                                 <rect key="frame" x="53" y="108" width="268" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VDm-d4-wgW">
+                                <color key="backgroundColor" red="0.88915395736694336" green="0.94175750017166138" blue="0.97424191236495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VDm-d4-wgW" customClass="FlowLayout" customModule="TypingSpeed" customModuleProvider="target">
                                     <size key="itemSize" width="133" height="87"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -72,7 +72,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sampleText" id="dLP-mt-ccL" customClass="TestWordCellCollectionViewCell" customModule="TypingSpeed" customModuleProvider="target">
-                                        <rect key="frame" x="67.5" y="0.0" width="133" height="87"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="133" height="87"/>

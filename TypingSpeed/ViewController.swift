@@ -24,7 +24,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var indexPosition = 0;
     var numCorrect = 0;
     var numWrong = 0;
-    let accuracyDetector = AccuracyDetection()
     var wordData = [TestWord]()
     
     
@@ -36,6 +35,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userTextField.delegate = self
         let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(outsideViewClick)
+        let flowLayout = textCollection.collectionViewLayout as? FlowLayout
+        flowLayout?.estimatedItemSize = CGSize(width: 20, height: 20)
+    
     }
     
     func checkToChangeScreen(){
@@ -73,7 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
             timer.invalidate()
-            resetsForScreenReturn()
+           resetsForScreenReturn()
             checkToChangeScreen()
         }
     }
@@ -88,23 +90,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    //MARK:AccuracyDetection
+//    //MARK:AccuracyDetection
     func textFieldValueChanged(_ textField: UITextField) {
-        accuracyDetector.trackNumChars()
-        
-        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0){
-            let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
-            if(correct){
-                indexPosition += 1
-                numCorrect+=1
-                resetUserTextfield()
-            }
-            else{
-                indexPosition += 1
-                numWrong += 1
-                resetUserTextfield()
-            }
-        }
+//        accuracyDetector.trackNumChars()
+//        
+//        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0) {
+//            let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
+//            if(correct){
+//                indexPosition += 1
+//                numCorrect+=1
+//                resetUserTextfield()
+//            }
+//            else{
+//                indexPosition += 1
+//                numWrong += 1
+//                resetUserTextfield()
+//            }
+//        }
+//            
     }
     
     
@@ -118,7 +121,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userBeganTyping = false
         passageNumber = Int(arc4random_uniform(2))
         indexPosition = 0
-        accuracyDetector.resetNumChars()
     }
     
     func resetsForScreenReturn(){
@@ -131,15 +133,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userBeganTyping = false
         passageNumber = Int(arc4random_uniform(2))
         indexPosition = 0
-        accuracyDetector.resetNumChars()
     }
     
     func resetUserTextfield(){
         userTextField.text = ""
     }
     
-   
-    
+
     //MARK: Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WPMScreenSegue" {
@@ -148,11 +148,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             WPMInfo.numWrongDisplay = numWrong
             
         }
-        
-        
+
     }
 }
-
 
 extension ViewController: UICollectionViewDataSource {
     

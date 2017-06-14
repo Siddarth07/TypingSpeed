@@ -16,9 +16,9 @@
 		BE531E0B1EEED1800043D3DE /* TypingSpeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E0A1EEED1800043D3DE /* TypingSpeedTests.swift */; };
 		BE531E161EEED1800043D3DE /* TypingSpeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */; };
 		BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E251EEEE83D0043D3DE /* TypingPassages.swift */; };
-		BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E271EEEF4040043D3DE /* accuracyDetection.swift */; };
 		BE65A7551EF1A8080092C038 /* TestWordCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */; };
 		BE65A7571EF1A9480092C038 /* TestWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7561EF1A9480092C038 /* TestWord.swift */; };
+		BE65A7591EF1C22B0092C038 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7581EF1C22B0092C038 /* FlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingSpeedUITests.swift; sourceTree = "<group>"; };
 		BE531E171EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE531E251EEEE83D0043D3DE /* TypingPassages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingPassages.swift; sourceTree = "<group>"; };
-		BE531E271EEEF4040043D3DE /* accuracyDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accuracyDetection.swift; sourceTree = "<group>"; };
 		BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWordCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE65A7561EF1A9480092C038 /* TestWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWord.swift; sourceTree = "<group>"; };
+		BE65A7581EF1C22B0092C038 /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				BE531DF51EEED1800043D3DE /* AppDelegate.swift */,
-				BE531E271EEEF4040043D3DE /* accuracyDetection.swift */,
 				BE531DF71EEED1800043D3DE /* ViewController.swift */,
 				BE26D08D1EF0449800685841 /* WPMScreen.swift */,
 				BE531E251EEEE83D0043D3DE /* TypingPassages.swift */,
 				BE531DF91EEED1800043D3DE /* Main.storyboard */,
+				BE65A7581EF1C22B0092C038 /* FlowLayout.swift */,
 				BE65A7561EF1A9480092C038 /* TestWord.swift */,
 				BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */,
 				BE531DFC1EEED1800043D3DE /* Assets.xcassets */,
@@ -275,12 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */,
+				BE65A7591EF1C22B0092C038 /* FlowLayout.swift in Sources */,
 				BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */,
 				BE65A7551EF1A8080092C038 /* TestWordCellCollectionViewCell.swift in Sources */,
 				BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */,
 				BE26D08E1EF0449800685841 /* WPMScreen.swift in Sources */,
 				BE65A7571EF1A9480092C038 /* TestWord.swift in Sources */,
-				BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
