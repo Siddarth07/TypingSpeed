@@ -10,6 +10,24 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var countdownText: UILabel!
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var textCollection: UICollectionView!
+    
+    var numSeconds = 15
+    var timer = Timer()
+    var userBeganTyping = false
+    var attributesNotSet = true
+    var passageNumber = Int(arc4random_uniform(2))
+    let typingPassages = TypingPassages()
+    var passageUse = ""
+    var indexPosition = 0;
+    var numCorrect = 0;
+    var numWrong = 0;
+    let accuracyDetector = AccuracyDetection()
+    var wordData = [TestWord]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,9 +36,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userTextField.delegate = self
         let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(outsideViewClick)
-        
-        
-        
     }
     
     func checkToChangeScreen(){
@@ -44,12 +59,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: Function Call to Timer
-    @IBOutlet weak var countdownText: UILabel!
-    var numSeconds = 15
-    var timer = Timer()
-    @IBOutlet weak var userTextField: UITextField!
-    
-    var userBeganTyping = false
+
     @IBAction func pressInUserTextField(_ sender: Any) {
         if(!(userBeganTyping)){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(implementCounter), userInfo: nil, repeats: true)
@@ -63,32 +73,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
             timer.invalidate()
+            resetsForScreenReturn()
             checkToChangeScreen()
         }
     }
     
     //MARK: Creating Passage
-    var attributesNotSet = true
-    var passageNumber = Int(arc4random_uniform(2))
-    let typingPassages = TypingPassages()
-    var passageUse = ""
-    @IBOutlet weak var passageText: UITextView!
     func populateTextPassage() {
-        if(attributesNotSet){
-            passageText.isEditable = false
-            attributesNotSet = false
-        }
-        passageUse = typingPassages.retreivePassage(choiceNumber: passageNumber)
-        passageText.text = passageUse
+        let passage = typingPassages.retreivePassage(choiceNumber: passageNumber)
+        let wordArray = passage.components(separatedBy: " ")
+        wordData = wordArray.map { TestWord(word: $0) }
+        textCollection.reloadData()
     }
     
     
     
     //MARK:AccuracyDetection
-    var indexPosition = 0;
-    var numCorrect = 0;
-    var numWrong = 0;
-    let accuracyDetector = AccuracyDetection()
     func textFieldValueChanged(_ textField: UITextField) {
         accuracyDetector.trackNumChars()
         
@@ -108,15 +108,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func scrollToCurrentWord(){
-        
-    }
-    func getCurrentIndexInTextView(){
-        // var index = 0
-        
+    @IBAction func resetButton(_ sender: Any) {
+        numSeconds = 60
+        countdownText.text = "60"
+        timer.invalidate()
+        populateTextPassage()
+        resetUserTextfield()
+        dismissKeyboard()
+        userBeganTyping = false
+        passageNumber = Int(arc4random_uniform(2))
+        indexPosition = 0
+        accuracyDetector.resetNumChars()
     }
     
-    @IBAction func resetButton(_ sender: Any) {
+    func resetsForScreenReturn(){
         numSeconds = 60
         countdownText.text = "60"
         timer.invalidate()
@@ -133,6 +138,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userTextField.text = ""
     }
     
+   
+    
     //MARK: Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WPMScreenSegue" {
@@ -143,6 +150,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         
+    }
+}
+
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return wordData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = indexPath.item
+        let word = wordData[index]
+        let cell = textCollection.dequeueReusableCell(withReuseIdentifier: "sampleText", for: indexPath) as! TestWordCellCollectionViewCell
+        cell.configure(with: word)
+        return cell 
     }
 }
 

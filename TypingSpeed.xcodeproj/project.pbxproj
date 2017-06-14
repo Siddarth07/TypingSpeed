@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE26D08C1EF0408600685841 /* populateTextPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D08B1EF0408600685841 /* populateTextPassage.swift */; };
 		BE26D08E1EF0449800685841 /* WPMScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D08D1EF0449800685841 /* WPMScreen.swift */; };
 		BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF51EEED1800043D3DE /* AppDelegate.swift */; };
 		BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF71EEED1800043D3DE /* ViewController.swift */; };
@@ -18,7 +17,8 @@
 		BE531E161EEED1800043D3DE /* TypingSpeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E151EEED1800043D3DE /* TypingSpeedUITests.swift */; };
 		BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E251EEEE83D0043D3DE /* TypingPassages.swift */; };
 		BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E271EEEF4040043D3DE /* accuracyDetection.swift */; };
-		BE531E2A1EEF24100043D3DE /* TimerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531E291EEF24100043D3DE /* TimerImplementation.swift */; };
+		BE65A7551EF1A8080092C038 /* TestWordCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */; };
+		BE65A7571EF1A9480092C038 /* TestWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7561EF1A9480092C038 /* TestWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE26D08B1EF0408600685841 /* populateTextPassage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = populateTextPassage.swift; sourceTree = "<group>"; };
 		BE26D08D1EF0449800685841 /* WPMScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPMScreen.swift; sourceTree = "<group>"; };
 		BE531DF21EEED1800043D3DE /* TypingSpeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingSpeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE531DF51EEED1800043D3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +55,8 @@
 		BE531E171EEED1800043D3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE531E251EEEE83D0043D3DE /* TypingPassages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingPassages.swift; sourceTree = "<group>"; };
 		BE531E271EEEF4040043D3DE /* accuracyDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accuracyDetection.swift; sourceTree = "<group>"; };
-		BE531E291EEF24100043D3DE /* TimerImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerImplementation.swift; path = ../TimerImplementation.swift; sourceTree = "<group>"; };
+		BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWordCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE65A7561EF1A9480092C038 /* TestWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +111,10 @@
 				BE531E271EEEF4040043D3DE /* accuracyDetection.swift */,
 				BE531DF71EEED1800043D3DE /* ViewController.swift */,
 				BE26D08D1EF0449800685841 /* WPMScreen.swift */,
-				BE531E291EEF24100043D3DE /* TimerImplementation.swift */,
 				BE531E251EEEE83D0043D3DE /* TypingPassages.swift */,
-				BE26D08B1EF0408600685841 /* populateTextPassage.swift */,
 				BE531DF91EEED1800043D3DE /* Main.storyboard */,
+				BE65A7561EF1A9480092C038 /* TestWord.swift */,
+				BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */,
 				BE531DFC1EEED1800043D3DE /* Assets.xcassets */,
 				BE531DFE1EEED1800043D3DE /* LaunchScreen.storyboard */,
 				BE531E011EEED1800043D3DE /* Info.plist */,
@@ -276,11 +276,11 @@
 			files = (
 				BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */,
 				BE531E261EEEE83D0043D3DE /* TypingPassages.swift in Sources */,
+				BE65A7551EF1A8080092C038 /* TestWordCellCollectionViewCell.swift in Sources */,
 				BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */,
-				BE26D08C1EF0408600685841 /* populateTextPassage.swift in Sources */,
 				BE26D08E1EF0449800685841 /* WPMScreen.swift in Sources */,
+				BE65A7571EF1A9480092C038 /* TestWord.swift in Sources */,
 				BE531E281EEEF4040043D3DE /* accuracyDetection.swift in Sources */,
-				BE531E2A1EEF24100043D3DE /* TimerImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

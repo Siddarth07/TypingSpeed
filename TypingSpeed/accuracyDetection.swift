@@ -37,6 +37,9 @@ class AccuracyDetection{
     func trackNumChars() {
         numChar += 1
     }
+    func returnNumChars() -> Int{
+        return numChar
+    }
     
     func resetNumChars(){
         numChar = 0
