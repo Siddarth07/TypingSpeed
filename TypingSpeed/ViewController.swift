@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class typingSpeed: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var countdownText: UILabel!
     @IBOutlet weak var userTextField: UITextField!
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         populateTextPassage()
         userTextField.addTarget(self, action: #selector(textFieldValueChanged(_:)), for: .editingChanged)
         userTextField.delegate = self
-        let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(typingSpeed.dismissKeyboard))
         view.addGestureRecognizer(outsideViewClick)
         let flowLayout = textCollection.collectionViewLayout as? FlowLayout
         flowLayout?.estimatedItemSize = CGSize(width: 20, height: 20)
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: Exitting First Responder Status and Hiding Keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //Hide keyboard
         textField.resignFirstResponder()
         return true
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func implementCounter(){
+    func implementCounter() {
         numSeconds -= 1
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
@@ -92,23 +92,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:AccuracyDetection
     func textFieldValueChanged(_ textField: UITextField) {
-//        accuracyDetector.trackNumChars()
-//        
-        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0) {
+        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0 && indexPosition < 300) {
             let answer = userTextField.text!
             wordData[indexPosition].setAnswer(String(answer.characters.dropLast()))
-            if(wordData[indexPosition].isCorrect){
+            wordData[indexPosition + 1].indexPathBool(true)
+            if(wordData[indexPosition].isCorrect) {
                 numCorrect += 1
-                print(numCorrect)
                 resetUserTextfield()
             }
             else {
                 numWrong += 1
                 resetUserTextfield()
             }
+            wordData[indexPosition].indexPathBool(false)
             indexPosition += 1
+            let indexPathToScroll = IndexPath(row: indexPosition, section: 0)
+            textCollection.scrollToItem(at: indexPathToScroll, at: UICollectionViewScrollPosition.top, animated: true)
             textCollection.reloadData()
-            
+
         }
         
     }
@@ -125,7 +126,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         indexPosition = 0
     }
     
-    func resetsForScreenReturn(){
+    func resetsForScreenReturn() {
         numSeconds = 60
         countdownText.text = "60"
         timer.invalidate()
@@ -136,7 +137,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         indexPosition = 0
     }
     
-    func resetUserTextfield(){
+    func resetUserTextfield() {
         userTextField.text = ""
     }
     
@@ -153,7 +154,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension typingSpeed: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return wordData.count

@@ -13,17 +13,21 @@ class TestWord {
     
     let correctWord: String
     var answer: String?
+    var indexPathBool: Bool = false
     
     public init(word: String) {
         self.correctWord = word
-        //print(self.correctWord)
     }
     
     func setAnswer(_ answer: String) {
         self.answer = answer
       
     }
-
+    
+    func indexPathBool(_ indexPathBool: Bool) {
+        self.indexPathBool = indexPathBool
+    }
+    
     var isCorrect: Bool {
         guard let answer = answer else {
             return false
@@ -54,8 +58,12 @@ extension TestWord: TestWordViewModel {
     }
     
     var backgroundColor: UIColor {
+        if(indexPathBool) {
+            return UIColor.lightGray
+        }
         guard answer != nil else { return UIColor.white }
         return isCorrect ? UIColor.green : UIColor.red
+        
     }
     
 }
