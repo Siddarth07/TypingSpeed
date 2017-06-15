@@ -16,16 +16,22 @@ class TestWord {
     
     public init(word: String) {
         self.correctWord = word
+        //print(self.correctWord)
     }
     
     func setAnswer(_ answer: String) {
         self.answer = answer
+      
     }
-    
+
     var isCorrect: Bool {
-        guard let answer = answer else { return false }
+        guard let answer = answer else {
+            return false
+        }
         return (answer == correctWord)
     }
+
+   
     
 }
 
@@ -49,7 +55,7 @@ extension TestWord: TestWordViewModel {
     }
     
     var backgroundColor: UIColor {
-        guard answer != nil else { return UIColor.gray }
+        guard answer != nil else { return UIColor.white }
         return isCorrect ? UIColor.green : UIColor.red
     }
     

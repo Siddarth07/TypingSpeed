@@ -14,8 +14,7 @@ class WPMScreen: UIViewController {
     var numWrongDisplay = 0
     
     @IBOutlet weak var WPMDisplay: UILabel!
-    override func viewDidLoad() {
-        
+    override func viewDidLoad() {        
         super.viewDidLoad()
         WPMDisplay.text = String(numCorrectDisplay)
         // Do any additional setup after loading the view.

@@ -13,18 +13,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countdownText: UILabel!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var textCollection: UICollectionView!
-    
+   
+    let typingPassages = TypingPassages()
     var numSeconds = 15
     var timer = Timer()
     var userBeganTyping = false
     var attributesNotSet = true
     var passageNumber = Int(arc4random_uniform(2))
-    let typingPassages = TypingPassages()
     var passageUse = ""
     var indexPosition = 0;
     var numCorrect = 0;
     var numWrong = 0;
     var wordData = [TestWord]()
+    var wordArray = [String]()
     
     
     override func viewDidLoad() {
@@ -61,7 +62,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: Function Call to Timer
-
     @IBAction func pressInUserTextField(_ sender: Any) {
         if(!(userBeganTyping)){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(implementCounter), userInfo: nil, repeats: true)
@@ -82,32 +82,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Creating Passage
     func populateTextPassage() {
-        let passage = typingPassages.retreivePassage(choiceNumber: passageNumber)
-        let wordArray = passage.components(separatedBy: " ")
+        let passage = typingPassages.retreivePassage()
+        wordArray = passage.components(separatedBy: " ")
         wordData = wordArray.map { TestWord(word: $0) }
         textCollection.reloadData()
     }
     
     
     
-//    //MARK:AccuracyDetection
+    //MARK:AccuracyDetection
     func textFieldValueChanged(_ textField: UITextField) {
 //        accuracyDetector.trackNumChars()
 //        
-//        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0) {
+        if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0) {
+            TestWord(word: wordArray[indexPosition]).setAnswer(String((userTextField.text!).characters.dropLast()))
+            if(TestWord(word: wordArray[indexPosition]).isCorrect){
+                numCorrect += 1
+                resetUserTextfield()
+            }
+            else {
+                numWrong += 1
+                resetUserTextfield()
+            }
+            indexPosition += 1
+            
 //            let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
-//            if(correct){
+//            if(correct) {
 //                indexPosition += 1
 //                numCorrect+=1
 //                resetUserTextfield()
 //            }
-//            else{
+//            else {
 //                indexPosition += 1
 //                numWrong += 1
 //                resetUserTextfield()
 //            }
-//        }
-//            
+        }
+        
     }
     
     
@@ -119,7 +130,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         resetUserTextfield()
         dismissKeyboard()
         userBeganTyping = false
-        passageNumber = Int(arc4random_uniform(2))
         indexPosition = 0
     }
     
@@ -131,7 +141,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         resetUserTextfield()
         dismissKeyboard()
         userBeganTyping = false
-        passageNumber = Int(arc4random_uniform(2))
         indexPosition = 0
     }
     
