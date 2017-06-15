@@ -40,7 +40,6 @@ protocol TestWordViewModel {
     var text: String { get }
     var textColor: UIColor { get }
     var backgroundColor: UIColor { get }
-    
 }
 
 

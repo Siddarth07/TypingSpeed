@@ -95,9 +95,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        accuracyDetector.trackNumChars()
 //        
         if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0) {
-            TestWord(word: wordArray[indexPosition]).setAnswer(String((userTextField.text!).characters.dropLast()))
-            if(TestWord(word: wordArray[indexPosition]).isCorrect){
+            let answer = userTextField.text!
+            wordData[indexPosition].setAnswer(String(answer.characters.dropLast()))
+            if(wordData[indexPosition].isCorrect){
                 numCorrect += 1
+                print(numCorrect)
                 resetUserTextfield()
             }
             else {
@@ -105,18 +107,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 resetUserTextfield()
             }
             indexPosition += 1
+            textCollection.reloadData()
             
-//            let correct =  accuracyDetector.wordCorrect(choiceOfPassage: passageUse, userEnteredWord: userTextField.text!, indexPosition: indexPosition)
-//            if(correct) {
-//                indexPosition += 1
-//                numCorrect+=1
-//                resetUserTextfield()
-//            }
-//            else {
-//                indexPosition += 1
-//                numWrong += 1
-//                resetUserTextfield()
-//            }
         }
         
     }

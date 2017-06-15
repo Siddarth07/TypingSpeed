@@ -19,7 +19,7 @@ class TypingPassages{
             }
         } catch {
             // do something with Error
-            print("fileProbs")
+            print("fileProbs")                                                                                                                                                 
         }
         var totalNumWords = 0
         var passageString = ""
