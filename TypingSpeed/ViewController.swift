@@ -13,17 +13,18 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countdownText: UILabel!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var textCollection: UICollectionView!
-   
+    
     let typingPassages = TypingPassages()
-    var numSeconds = 15
+    var numSeconds = 7
     var timer = Timer()
     var userBeganTyping = false
     var attributesNotSet = true
-    var passageNumber = Int(arc4random_uniform(2))
+    var passageDifficulty = 0
     var passageUse = ""
-    var indexPosition = 0;
-    var numCorrect = 0;
-    var numWrong = 0;
+    var indexPosition = 0
+    var numWordsCorrect = 0
+    var numWordsWrong = 0
+    var correctWrongChars = [0,0]
     var wordData = [TestWord]()
     var wordArray = [String]()
     
@@ -31,6 +32,7 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print(passageDifficulty)
         populateTextPassage()
         userTextField.addTarget(self, action: #selector(textFieldValueChanged(_:)), for: .editingChanged)
         userTextField.delegate = self
@@ -38,7 +40,7 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(outsideViewClick)
         let flowLayout = textCollection.collectionViewLayout as? FlowLayout
         flowLayout?.estimatedItemSize = CGSize(width: 20, height: 20)
-    
+        
     }
     
     func checkToChangeScreen(){
@@ -75,14 +77,13 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
             timer.invalidate()
-           resetsForScreenReturn()
             checkToChangeScreen()
         }
     }
     
     //MARK: Creating Passage
     func populateTextPassage() {
-        let passage = typingPassages.retreivePassage()
+        let passage = typingPassages.retreivePassage(difficultyLevel: passageDifficulty)
         wordArray = passage.components(separatedBy: " ")
         wordData = wordArray.map { TestWord(word: $0) }
         textCollection.reloadData()
@@ -93,30 +94,31 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
     //MARK:AccuracyDetection
     func textFieldValueChanged(_ textField: UITextField) {
         if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0 && indexPosition < 300) {
-            let answer = userTextField.text!
-            wordData[indexPosition].setAnswer(String(answer.characters.dropLast()))
+            let answer = String(userTextField.text!.characters.dropLast())
+            wordData[indexPosition].setAnswer(answer)
             wordData[indexPosition + 1].indexPathBool(true)
             if(wordData[indexPosition].isCorrect) {
-                numCorrect += 1
+                numWordsCorrect += 1
                 resetUserTextfield()
             }
             else {
-                numWrong += 1
+                numWordsWrong += 1
                 resetUserTextfield()
             }
-            wordData[indexPosition].indexPathBool(false)
+            let wordCharCorrectWrongArr = charAccuracyInformation(correctWord: wordData[indexPosition].correctWord , userEnteredWord: answer).calculateNumCharsWrong()
+            correctWrongChars[0] += wordCharCorrectWrongArr[0]
+            correctWrongChars[1] += wordCharCorrectWrongArr[1]
             indexPosition += 1
+            wordData[indexPosition].indexPathBool(false)
             let indexPathToScroll = IndexPath(row: indexPosition, section: 0)
             textCollection.scrollToItem(at: indexPathToScroll, at: UICollectionViewScrollPosition.top, animated: true)
             textCollection.reloadData()
-
         }
-        
     }
     
     
     @IBAction func resetButton(_ sender: Any) {
-        numSeconds = 60
+        numSeconds = 7
         countdownText.text = "60"
         timer.invalidate()
         populateTextPassage()
@@ -124,33 +126,26 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         dismissKeyboard()
         userBeganTyping = false
         indexPosition = 0
-    }
-    
-    func resetsForScreenReturn() {
-        numSeconds = 60
-        countdownText.text = "60"
-        timer.invalidate()
-        populateTextPassage()
-        resetUserTextfield()
-        dismissKeyboard()
-        userBeganTyping = false
-        indexPosition = 0
+        numWordsCorrect = 0
+        numWordsWrong = 0
+        correctWrongChars = [0,0]
     }
     
     func resetUserTextfield() {
         userTextField.text = ""
     }
     
-
+    
     //MARK: Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WPMScreenSegue" {
             let WPMInfo = segue.destination as! WPMScreen
-            WPMInfo.numCorrectDisplay = numCorrect
-            WPMInfo.numWrongDisplay = numWrong
+            WPMInfo.numCorrectDisplay = numWordsCorrect
+            WPMInfo.numWrongDisplay = numWordsWrong
+            WPMInfo.charArray = correctWrongChars
             
         }
-
+        
     }
 }
 
@@ -165,7 +160,7 @@ extension typingSpeed: UICollectionViewDataSource {
         let word = wordData[index]
         let cell = textCollection.dequeueReusableCell(withReuseIdentifier: "sampleText", for: indexPath) as! TestWordCellCollectionViewCell
         cell.configure(with: word)
-        return cell 
+        return cell
     }
 }
 
