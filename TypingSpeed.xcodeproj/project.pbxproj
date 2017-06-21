@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1891441EFAB75500E01A92 /* 1-1000.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE1891431EFAB75500E01A92 /* 1-1000.txt */; };
 		BE26D08E1EF0449800685841 /* WPMScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D08D1EF0449800685841 /* WPMScreen.swift */; };
 		BE531DF61EEED1800043D3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF51EEED1800043D3DE /* AppDelegate.swift */; };
 		BE531DF81EEED1800043D3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE531DF71EEED1800043D3DE /* ViewController.swift */; };
@@ -19,7 +20,6 @@
 		BE65A7551EF1A8080092C038 /* TestWordCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */; };
 		BE65A7571EF1A9480092C038 /* TestWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7561EF1A9480092C038 /* TestWord.swift */; };
 		BE65A7591EF1C22B0092C038 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A7581EF1C22B0092C038 /* FlowLayout.swift */; };
-		BEE1854F1EF1D00E009473D0 /* 1-1000.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEE1854E1EF1D00E009473D0 /* 1-1000.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1891431EFAB75500E01A92 /* 1-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1-1000.txt"; path = "../../../../Desktop/1-1000.txt"; sourceTree = "<group>"; };
 		BE26D08D1EF0449800685841 /* WPMScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPMScreen.swift; sourceTree = "<group>"; };
 		BE531DF21EEED1800043D3DE /* TypingSpeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingSpeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE531DF51EEED1800043D3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		BE65A7541EF1A8080092C038 /* TestWordCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWordCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE65A7561EF1A9480092C038 /* TestWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWord.swift; sourceTree = "<group>"; };
 		BE65A7581EF1C22B0092C038 /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
-		BEE1854E1EF1D00E009473D0 /* 1-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "1-1000.txt"; path = "../../1-1000.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		BE531DF41EEED1800043D3DE /* TypingSpeed */ = {
 			isa = PBXGroup;
 			children = (
-				BEE1854E1EF1D00E009473D0 /* 1-1000.txt */,
+				BE1891431EFAB75500E01A92 /* 1-1000.txt */,
 				BE531DF51EEED1800043D3DE /* AppDelegate.swift */,
 				BE531DF71EEED1800043D3DE /* ViewController.swift */,
 				BE26D08D1EF0449800685841 /* WPMScreen.swift */,
@@ -253,7 +253,7 @@
 				BE531E001EEED1800043D3DE /* LaunchScreen.storyboard in Resources */,
 				BE531DFD1EEED1800043D3DE /* Assets.xcassets in Resources */,
 				BE531DFB1EEED1800043D3DE /* Main.storyboard in Resources */,
-				BEE1854F1EF1D00E009473D0 /* 1-1000.txt in Resources */,
+				BE1891441EFAB75500E01A92 /* 1-1000.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
