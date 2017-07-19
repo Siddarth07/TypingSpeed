@@ -18,9 +18,6 @@ class WPMScreen: UIViewController {
     @IBOutlet weak var numWrongLabel: UILabel!
     @IBOutlet weak var GrossWPM: UILabel!
     @IBOutlet weak var NetWPM: UILabel!
-
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +25,14 @@ class WPMScreen: UIViewController {
         numWrongLabel.text = String(numWrongDisplay)
         GrossWPM.text = String(calculateGrossWPM())
         if (calculateNetWPM() > 0) {
-        NetWPM.text = String(calculateNetWPM())
+            NetWPM.text = String(calculateNetWPM())
         }
         else {
             NetWPM.text = "0"
         }
         // Do any additional setup after loading the view.
     }
+    
     func calculateGrossWPM() -> Int {
         return Int(charArray[0]/5)
     }
@@ -47,9 +45,7 @@ class WPMScreen: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

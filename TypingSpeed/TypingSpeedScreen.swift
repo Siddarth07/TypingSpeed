@@ -8,7 +8,7 @@
 
 import UIKit
 
-class typingSpeed: UIViewController, UITextFieldDelegate {
+class TypingSpeedScreen: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var countdownText: UILabel!
     @IBOutlet weak var userTextField: UITextField!
@@ -31,23 +31,17 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pageResets()
         // Do any additional setup after loading the view, typically from a nib.
         print(passageDifficulty)
         populateTextPassage()
         userTextField.addTarget(self, action: #selector(textFieldValueChanged(_:)), for: .editingChanged)
         userTextField.delegate = self
-        let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(typingSpeed.dismissKeyboard))
+        let outsideViewClick: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingSpeedScreen.dismissKeyboard))
         view.addGestureRecognizer(outsideViewClick)
         let flowLayout = textCollection.collectionViewLayout as? FlowLayout
         flowLayout?.estimatedItemSize = CGSize(width: 20, height: 20)
-        
     }
-    
-    func checkToChangeScreen(){
-        self.performSegue(withIdentifier: "WPMScreenSegue", sender: self)
-        
-    }
-    
     
     //MARK: Exitting First Responder Status and Hiding Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,8 +55,6 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    
-    
     //MARK: Function Call to Timer
     @IBAction func pressInUserTextField(_ sender: Any) {
         if(!(userBeganTyping)){
@@ -71,14 +63,19 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     func implementCounter() {
         numSeconds -= 1
         countdownText.text = String(numSeconds)
         if(numSeconds==0){
+            numSeconds=60
             timer.invalidate()
-            checkToChangeScreen()
+            ChangeScreen()
         }
+    }
+    
+    func ChangeScreen(){
+        self.performSegue(withIdentifier: "WPMScreenSegue", sender: self)
+        
     }
     
     //MARK: Creating Passage
@@ -88,9 +85,7 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         wordData = wordArray.map { TestWord(word: $0) }
         textCollection.reloadData()
     }
-    
-    
-    
+
     //MARK:AccuracyDetection
     func textFieldValueChanged(_ textField: UITextField) {
         if((userTextField.text?.characters.count)! > 0 && (userTextField.text?.characters.last!)! == " " && numSeconds > 0 && indexPosition < 300) {
@@ -116,8 +111,21 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     @IBAction func resetButton(_ sender: Any) {
+        numSeconds = 7
+        countdownText.text = "60"
+        timer.invalidate()
+        populateTextPassage()
+        resetUserTextfield()
+        dismissKeyboard()
+        userBeganTyping = false
+        indexPosition = 0
+        numWordsCorrect = 0
+        numWordsWrong = 0
+        correctWrongChars = [0,0]
+    }
+
+    func pageResets() {
         numSeconds = 7
         countdownText.text = "60"
         timer.invalidate()
@@ -134,8 +142,7 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
     func resetUserTextfield() {
         userTextField.text = ""
     }
-    
-    
+
     //MARK: Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WPMScreenSegue" {
@@ -143,13 +150,15 @@ class typingSpeed: UIViewController, UITextFieldDelegate {
             WPMInfo.numCorrectDisplay = numWordsCorrect
             WPMInfo.numWrongDisplay = numWordsWrong
             WPMInfo.charArray = correctWrongChars
-            
         }
+    }
+
+    @IBAction func unwindToTypingSpeed(segue: UIStoryboardSegue) {
         
     }
 }
 
-extension typingSpeed: UICollectionViewDataSource {
+extension TypingSpeedScreen: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return wordData.count
