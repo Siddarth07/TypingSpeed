@@ -51,15 +51,15 @@
             </objects>
             <point key="canvasLocation" x="-951" y="132"/>
         </scene>
-        <!--Typing Speed-->
+        <!--Typing Speed Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="typingSpeed" customModule="TypingSpeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TypingSpeedScreen" customModule="TypingSpeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TypingSpeed">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UISegmentedControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -70,13 +70,13 @@
                                         <rect key="frame" x="5" y="0.0" width="335" height="301"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Typing Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylF-Ic-slA">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="4.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-X7-ZgI">
-                                                <rect key="frame" x="0.0" y="19.5" width="335" height="281.5"/>
+                                                <rect key="frame" x="0.0" y="20" width="335" height="281"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VDm-d4-wgW" customClass="FlowLayout" customModule="TypingSpeed" customModuleProvider="target">
                                                     <size key="itemSize" width="133" height="87"/>
@@ -135,8 +135,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                         <connections>
-                                                            <action selector="pressInUserTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="EUw-Ko-ycp"/>
-                                                            <action selector="pressInUserTextField:" destination="BYZ-38-t0r" eventType="touchDown" id="Fgf-gS-2Sf"/>
+                                                            <action selector="pressInUserTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="z3f-n9-zxv"/>
                                                             <outlet property="delegate" destination="BYZ-38-t0r" id="MYx-kb-KlA"/>
                                                         </connections>
                                                     </textField>
@@ -159,7 +158,7 @@
                                                     <color key="titleColor" red="0.12214485555887222" green="0.086937032639980316" blue="0.66961556673049927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wf4-1p-XIR"/>
+                                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzc-0o-mcQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -191,9 +190,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="countdownText" destination="EwM-BK-pg6" id="SSe-vY-cpk"/>
-                        <outlet property="textCollection" destination="0WM-X7-ZgI" id="Ugo-eA-LKR"/>
-                        <outlet property="userTextField" destination="m0x-fF-GEg" id="YgB-i2-m5m"/>
+                        <outlet property="countdownText" destination="EwM-BK-pg6" id="kkI-qQ-fpg"/>
+                        <outlet property="textCollection" destination="0WM-X7-ZgI" id="5Vh-Yk-rSs"/>
+                        <outlet property="userTextField" destination="m0x-fF-GEg" id="hU4-Dy-vay"/>
                         <segue destination="aiF-IQ-89t" kind="show" identifier="WPMScreenSegue" id="ggD-OZ-bHn"/>
                     </connections>
                 </viewController>
@@ -289,7 +288,7 @@
                                     <color key="titleColor" red="0.12214485555887222" green="0.086937032639980316" blue="0.66961556673049927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="TypingSpeedSegue" id="YMf-gR-2FE"/>
+                                    <segue destination="lDf-qw-zxp" kind="unwind" unwindAction="unwindToTypingSpeedWithSegue:" id="0Ds-tA-y3K"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuU-Gl-Bug" userLabel="Num Correct Label">
@@ -346,11 +345,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDt-Ev-4wL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lDf-qw-zxp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1084" y="138.98050974512745"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YMf-gR-2FE"/>
+        <segue reference="dLF-tJ-6kH"/>
     </inferredMetricsTieBreakers>
 </document>

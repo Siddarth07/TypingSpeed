@@ -32,9 +32,8 @@ class DifficultyScreen: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "difficultySegue" {
-            let passageDifficultyInfo = segue.destination as! typingSpeed
+            let passageDifficultyInfo = segue.destination as! TypingSpeedScreen
             passageDifficultyInfo.passageDifficulty = difficultyLevel
         }
     }
-
 }
